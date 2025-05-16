@@ -1,0 +1,79 @@
+{
+  "title": "Account Manager",
+  "showProgressBar": "top",
+  "pages": [
+    {
+      "name": "account_manager",
+      "elements": [
+        {
+          "type": "text",
+          "name": "account_manager_name",
+          "title": "Account Manager Name (optional)"
+        }
+      ]
+    },
+    {
+      "name": "deal_info",
+      "elements": [
+        {
+          "type": "dropdown",
+          "name": "transaction_type",
+          "title": "Transaction Type",
+          "choices": [
+            "Purchase",
+            "Refinance"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "loan_type",
+          "title": "Loan Type",
+          "choices": [
+            "Fix-N-Flip",
+            "Rental"
+          ]
+        },
+        {
+          "type": "text",
+          "name": "loan_amount",
+          "title": "Loan Amount",
+          "inputType": "number"
+        },
+        {
+          "type": "text",
+          "name": "loan_term",
+          "title": "Loan Term (Months)",
+          "inputType": "number"
+        },
+        {
+          "type": "dropdown",
+          "name": "property_type",
+          "title": "Property Type",
+          "choices": [
+            "Residential",
+            "Commercial"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "property_subtype",
+          "title": "Property Sub-Type",
+          "choices": [
+            "Single-Family Residence",
+            "Multi-Family"
+          ]
+        },
+        {
+          "type": "radiogroup",
+          "name": "important_deal_aspect",
+          "title": "What is most important for this deal?",
+          "choices": [
+            "Highest Leverage",
+            "Lowest Interest Rates",
+            "Lowest Fees"
+          ]
+        }
+      ]
+    }
+  ]
+}
