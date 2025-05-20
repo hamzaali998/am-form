@@ -6,21 +6,45 @@
       "name": "main_page",
       "elements": [
         {
-          "type": "text",
+          "type": "dropdown",
           "name": "account_manager_name",
-          "title": "Account Manager Name (optional)"
+          "title": "Account Manager Name",
+          "choices": [
+            "Sean Morsi",
+            "Antony Tobar",
+            "Sam Gandhi",
+            "Peter Irsilious",
+            "Micheal Rahavi",
+	    "Sofia Campo",
+	    "Elias Halak",
+	    "Benjamin Long",
+	    "Danny Cifuentes"
+          ]
+        },
+        {
+          "type": "html",
+          "name": "separator1",
+          "html": "<hr/>"
         },
         {
           "type": "dropdown",
           "name": "transaction_type",
           "title": "Transaction Type",
-          "choices": ["Purchase", "Refinance"]
+          "choices": [
+            "Purchase",
+            "Refinance"
+          ]
         },
         {
           "type": "dropdown",
           "name": "loan_type",
           "title": "Loan Type",
-          "choices": ["Fix-N-Flip", "Rental"]
+          "choices": [
+            "Fix-N-Flip",
+            "Buy-N-Hold",
+	    "Rehab-N-Hold",
+	    "Extension"
+          ]
         },
         {
           "type": "text",
@@ -38,19 +62,34 @@
           "type": "dropdown",
           "name": "property_type",
           "title": "Property Type",
-          "choices": ["Residential", "Commercial"]
+          "choices": [
+            "Residential",
+            "Commercial"
+          ]
         },
         {
           "type": "dropdown",
           "name": "property_subtype",
           "title": "Property Sub-Type",
-          "choices": ["Single-Family Residence", "Multi-Family"]
+          "choices": [
+            "Single-Family Residence",
+            "Condo",
+	    "Townhouse",
+	    "2-4 Units",
+            "Land",
+	    "Single-Family Residence with ADU",
+            "Manufactured Single-Family Residence"
+          ]
         },
         {
           "type": "radiogroup",
           "name": "important_deal_aspect",
           "title": "What is most important for this deal?",
-          "choices": ["Highest Leverage", "Lowest Interest Rates", "Lowest Fees"]
+          "choices": [
+            "Highest Leverage",
+            "Lowest Interest Rates",
+            "Lowest Fees"
+          ]
         }
       ]
     }
