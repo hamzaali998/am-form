@@ -215,99 +215,97 @@
                         }
                     ]
                 },
-                //borrower info
-  {
-    "type": "html",
-    "name": "borrower_info_header",
-    "html": "<h3>Borrower Info</h3><hr/>"
-  },
-  {
-    "type": "panel",
-    "name": "borrower_info_panel",
-    "elements": [
-      {
-        "type": "dropdown",
-        "name": "entity_type",
-        "title": "Entity Type",
-        "choices": [
-          "Individual",
-          "Limited Liability Company",
-          "S Corporation",
-          "C Corporation",
-          "Trust",
-          "TBD"
-        ]
-      },
-      {
-        "type": "text",
-        "name": "entity_legal_name",
-        "title": "Entity Legal Name",
-        "startWithNewLine": false,
-        "visibleIf": "{entity_type} != 'Individual' and {entity_type} != 'TBD'"
-      },
-      {
-        "type": "text",
-        "name": "signer_title",
-        "title": "Signer Title",
-        "visibleIf": "{entity_type} != 'Individual' and {entity_type} != 'TBD'"
-      },
-      {
-        "type": "text",
-        "name": "signer_first_name",
-        "title": "Signer First Name",
-        "startWithNewLine": false,
-        "visibleIf": "{entity_type} != 'TBD'"
-      },
-      {
-        "type": "text",
-        "name": "signer_last_name",
-        "title": "Signer Last Name",
-        "visibleIf": "{entity_type} != 'TBD'"
-      },
-      {
-        "type": "text",
-        "name": "signer_email",
-        "title": "Signer Email Address",
-        "inputType": "email",
-        "startWithNewLine": false,
-        "visibleIf": "{entity_type} != 'TBD'"
-      },
-      {
-        "type": "text",
-        "name": "signer_phone",
-        "title": "Signer Phone Number",
-        "inputType": "tel",
-        "visibleIf": "{entity_type} != 'TBD'"
-      },
-      {
-        "type": "dropdown",
-        "name": "is_foreign_national",
-        "title": "Is the guarantor a foreign national?",
-        "choices": [
-          "Yes",
-          "No"
-        ],
-        "startWithNewLine": false,
-        "visibleIf": "{entity_type} != 'TBD'"
-      },
-      {
-        "type": "dropdown",
-        "name": "credit_score_range",
-        "title": "Guarantor's Credit Score Range",
-        "choices": [
-          "800-850",
-          "740-799",
-          "670-739",
-          "580-669",
-          "300-579",
-          "TBD"
-        ],
-        "startWithNewLine": false,
-        "visibleIf": "{is_foreign_national} = 'No' and {entity_type} != 'TBD'"
-      }
-    ]
-  }
-
+                {
+                    "type": "html",
+                    "name": "borrower_info_header",
+                    "html": "<h3>Borrower Info</h3><hr/>"
+                },
+                {
+                    "type": "panel",
+                    "name": "borrower_info_panel",
+                    "elements": [
+                        {
+                            "type": "dropdown",
+                            "name": "entity_type",
+                            "title": "Entity Type",
+                            "choices": [
+                                "Individual",
+                                "Limited Liability Company",
+                                "S Corporation",
+                                "C Corporation",
+                                "Trust",
+                                "TBD"
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "name": "entity_legal_name",
+                            "title": "Entity Legal Name",
+                            "startWithNewLine": false,
+                            "visibleIf": "{entity_type} != 'Individual' and {entity_type} != 'TBD'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "signer_title",
+                            "title": "Signer Title",
+                            "visibleIf": "{entity_type} != 'Individual' and {entity_type} != 'TBD'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "signer_first_name",
+                            "title": "Signer First Name",
+                            "startWithNewLine": false,
+                            "visibleIf": "{entity_type} != 'TBD'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "signer_last_name",
+                            "title": "Signer Last Name",
+                            "visibleIf": "{entity_type} != 'TBD'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "signer_email",
+                            "title": "Signer Email Address",
+                            "inputType": "email",
+                            "startWithNewLine": false,
+                            "visibleIf": "{entity_type} != 'TBD'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "signer_phone",
+                            "title": "Signer Phone Number",
+                            "inputType": "tel",
+                            "visibleIf": "{entity_type} != 'TBD'"
+                        },
+                        {
+                            "type": "dropdown",
+                            "name": "is_foreign_national",
+                            "title": "Is the guarantor a foreign national?",
+                            "choices": [
+                                "Yes",
+                                "No"
+                            ],
+                            "startWithNewLine": false,
+                            "visibleIf": "{entity_type} != 'TBD'"
+                        },
+                        {
+                            "type": "dropdown",
+                            "name": "credit_score_range",
+                            "title": "Guarantor's Credit Score Range",
+                            "choices": [
+                                "800-850",
+                                "740-799",
+                                "670-739",
+                                "580-669",
+                                "300-579",
+                                "TBD"
+                            ],
+                            "startWithNewLine": false,
+                            "visibleIf": "{is_foreign_national} = 'No' and {entity_type} != 'TBD'"
+                        }
+                    ]
+                }
             ]
         }
     ]
