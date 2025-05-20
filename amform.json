@@ -131,13 +131,16 @@
       "title": "Is the property under contract? (optional)",
       "choices": ["Yes", "No"]
     },
-    {
-      "type": "text",
-      "name": "estimated_closing_date",
-      "title": "Estimated Closing Date (optional)",
-      "inputType": "date",
-      "startWithNewLine": false
-    },
+{
+  "type": "text",
+  "name": "estimated_closing_date",
+  "title": "Estimated Closing Date (optional)",
+  "inputType": "date",
+  "visibleIf": "{property_under_contract} = 'Yes'",
+  "startWithNewLine": false
+
+}
+
     {
       "type": "comment",
       "name": "exit_strategy",
@@ -187,13 +190,7 @@
     }
   ]
 },
-{
-  "type": "text",
-  "name": "estimated_closing_date",
-  "title": "Estimated Closing Date (optional)",
-  "inputType": "date",
-  "visibleIf": "{property_under_contract} = 'Yes'"
-}
+
 
 
       ]
