@@ -87,7 +87,70 @@
             }
           ],
           "innerIndent": 1
-        }
+        },
+
+        {
+  "type": "html",
+  "name": "deal_details_header",
+  "visibleIf": "{transaction_type} notempty",
+  "html": "<h3>Deal Details</h3><hr/>"
+},
+{
+  "type": "panel",
+  "name": "deal_details_panel",
+  "visibleIf": "{transaction_type} notempty",
+  "elements": [
+    {
+      "type": "text",
+      "name": "purchase_price",
+      "title": "Purchase Price (optional)",
+      "inputType": "number"
+    },
+    {
+      "type": "text",
+      "name": "after_repair_value",
+      "title": "After Repair Value (ARV) (optional)",
+      "inputType": "number",
+      "startWithNewLine": false
+    },
+    {
+      "type": "text",
+      "name": "construction_budget",
+      "title": "Construction Budget (optional)",
+      "inputType": "number"
+    },
+    {
+      "type": "text",
+      "name": "down_payment",
+      "title": "Down Payment (optional)",
+      "inputType": "number"
+    },
+    {
+      "type": "dropdown",
+      "name": "property_under_contract",
+      "title": "Is the property under contract? (optional)",
+      "choices": ["Yes", "No"],
+      "startWithNewLine": false
+    },
+    {
+      "type": "text",
+      "name": "estimated_closing_date",
+      "title": "Estimated Closing Date (optional)",
+      "inputType": "date"
+    },
+    {
+      "type": "comment",
+      "name": "exit_strategy",
+      "title": "Borrower's Exit Strategy (optional)"
+    },
+    {
+      "type": "comment",
+      "name": "more_scenario_info",
+      "title": "More Scenario Info (optional)"
+    }
+  ]
+}
+
       ]
     }
   ]
