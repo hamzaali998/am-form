@@ -15,15 +15,8 @@
           "name": "account_manager_name",
           "title": "Name (optional)",
           "choices": [
-            "Sean Morsi",
-            "Antony Tobar",
-            "Sam Gandhi",
-            "Peter Irsilious",
-            "Micheal Rahavi",
-            "Sofia Campo",
-            "Elias Halak",
-            "Benjamin Long",
-            "Danny Cifuentes"
+            "Sean Morsi", "Antony Tobar", "Sam Gandhi", "Peter Irsilious", "Micheal Rahavi",
+            "Sofia Campo", "Elias Halak", "Benjamin Long", "Danny Cifuentes"
           ]
         },
         {
@@ -41,59 +34,56 @@
           "name": "deal_info_panel",
           "elements": [
             {
-              "type": "multipletext",
-              "name": "deal_info_row1",
-              "items": [
-                {
-                  "name": "transaction_type",
-                  "title": "Transaction Type"
-                },
-                {
-                  "name": "loan_type",
-                  "title": "Loan Type"
-                }
-              ]
+              "type": "dropdown",
+              "name": "transaction_type",
+              "title": "Transaction Type",
+              "choices": ["Purchase", "Refinance"],
+              "startWithNewLine": false
             },
             {
-              "type": "multipletext",
-              "name": "deal_info_row2",
-              "items": [
-                {
-                  "name": "loan_amount",
-                  "title": "Loan Amount"
-                },
-                {
-                  "name": "loan_term",
-                  "title": "Loan Term"
-                }
-              ]
+              "type": "dropdown",
+              "name": "loan_type",
+              "title": "Loan Type",
+              "choices": ["Fix-N-Flip", "Buy-N-Hold", "Rehab-N-Hold", "Extension"]
             },
             {
-              "type": "multipletext",
-              "name": "deal_info_row3",
-              "items": [
-                {
-                  "name": "property_type",
-                  "title": "Property Type"
-                },
-                {
-                  "name": "property_subtype",
-                  "title": "Property Sub-Type"
-                }
+              "type": "text",
+              "name": "loan_amount",
+              "title": "Loan Amount",
+              "inputType": "number",
+              "startWithNewLine": false
+            },
+            {
+              "type": "text",
+              "name": "loan_term",
+              "title": "Loan Term (Months)",
+              "inputType": "number"
+            },
+            {
+              "type": "dropdown",
+              "name": "property_type",
+              "title": "Property Type",
+              "choices": ["Residential", "Commercial"],
+              "startWithNewLine": false
+            },
+            {
+              "type": "dropdown",
+              "name": "property_subtype",
+              "title": "Property Sub-Type",
+              "choices": [
+                "Single-Family Residence", "Condo", "Townhouse", "2-4 Units",
+                "Land", "Single-Family Residence with ADU", "Manufactured Single-Family Residence"
               ]
             },
             {
               "type": "radiogroup",
               "name": "important_deal_aspect",
               "title": "What is most important for this deal? (optional)",
-              "choices": [
-                "Highest Leverage",
-                "Lowest Interest Rates",
-                "Lowest Fees"
-              ],
+              "choices": ["Highest Leverage", "Lowest Interest Rates", "Lowest Fees"],
               "colCount": 3
             }
-          ]
+          ],
+          "innerIndent": 1
         }
       ]
     }
