@@ -149,7 +149,52 @@
       "title": "More Scenario Info (optional)"
     }
   ]
+},
+
+      {
+  "type": "html",
+  "name": "subject_address_header",
+  "visibleIf": "{property_under_contract} notempty",
+  "html": "<h3>Subject Address</h3><hr/>"
+},
+{
+  "type": "panel",
+  "name": "subject_address_panel",
+  "visibleIf": "{property_under_contract} notempty",
+  "elements": [
+    {
+      "type": "text",
+      "name": "street_address",
+      "title": "Street Address (optional)"
+    },
+    {
+      "type": "text",
+      "name": "city",
+      "title": "City (optional)"
+    },
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": "State (optional)",
+      "choices": ["California"],
+      "startWithNewLine": false
+    },
+    {
+      "type": "text",
+      "name": "zip_code",
+      "title": "Zip Code (optional)",
+      "startWithNewLine": false
+    }
+  ]
+},
+{
+  "type": "text",
+  "name": "estimated_closing_date",
+  "title": "Estimated Closing Date (optional)",
+  "inputType": "date",
+  "visibleIf": "{property_under_contract} = 'Yes'"
 }
+
 
       ]
     }
