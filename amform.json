@@ -139,7 +139,7 @@
   "visibleIf": "{property_under_contract} = 'Yes'",
   "startWithNewLine": false
 
-}
+},
 
     {
       "type": "comment",
