@@ -136,7 +136,6 @@
   "name": "estimated_closing_date",
   "title": "Estimated Closing Date (optional)",
   "inputType": "date",
-  "visibleIf": "{property_under_contract} = 'Yes'",
   "startWithNewLine": false
 
 },
