@@ -37,34 +37,36 @@
               "type": "dropdown",
               "name": "transaction_type",
               "title": "Transaction Type",
-              "choices": ["Purchase", "Refinance"],
-              "startWithNewLine": false
+              "choices": ["Purchase", "Refinance"]
+             
             },
             {
               "type": "dropdown",
               "name": "loan_type",
               "title": "Loan Type",
-              "choices": ["Fix-N-Flip", "Buy-N-Hold", "Rehab-N-Hold", "Extension"]
+              "choices": ["Fix-N-Flip", "Buy-N-Hold", "Rehab-N-Hold", "Extension"],
+               "startWithNewLine": false
             },
             {
               "type": "text",
               "name": "loan_amount",
               "title": "Loan Amount",
-              "inputType": "number",
-              "startWithNewLine": false
+              "inputType": "number"
+             
             },
             {
               "type": "text",
               "name": "loan_term",
               "title": "Loan Term (Months)",
-              "inputType": "number"
+              "inputType": "number",
+               "startWithNewLine": false
             },
             {
               "type": "dropdown",
               "name": "property_type",
               "title": "Property Type",
-              "choices": ["Residential", "Commercial"],
-              "startWithNewLine": false
+              "choices": ["Residential", "Commercial"]
+              
             },
             {
               "type": "dropdown",
@@ -73,7 +75,8 @@
               "choices": [
                 "Single-Family Residence", "Condo", "Townhouse", "2-4 Units",
                 "Land", "Single-Family Residence with ADU", "Manufactured Single-Family Residence"
-              ]
+              ],
+              "startWithNewLine": false
             },
             {
               "type": "radiogroup",
