@@ -418,7 +418,13 @@
                             "name": "loan_purpose",
                             "title": "Loan Purpose (optional)",
                             "choices": [
-                                "Add options here"
+                                "Purchase of Investment Property - Fix-N-Flip Loan",
+                                "Purchase of Investment Property - Buy-N-Hold Loan",
+                                "Purchase of Investment Property - Rehab-N-Hold Loan",
+                                "Refinance of Investment Property - Fix-N-Flip Loan",
+                                "Refinance of Investment Property - Rehab-N-Hold Loan",
+                                "Refinance of Investment Property - Rental Loan",
+                                "Extension"
                             ],
                             "startWithNewLine": false,
                             "visibleIf": "{prepare_proposal} = 'Yes'"
@@ -436,7 +442,8 @@
                             "name": "collateral",
                             "title": "Collateral (optional)",
                             "choices": [
-                                "Add options here"
+                                "First Trust Deed on subject property",
+                                "Second Trust Deed on subject property"
                             ],
                             "startWithNewLine": false,
                             "visibleIf": "{prepare_proposal} = 'Yes'"
