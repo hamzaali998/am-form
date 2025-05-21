@@ -348,6 +348,7 @@
                     "type": "text",
                     "name": "broker_name",
                     "title": "Broker Name",
+                    "startWithNewLine": false,
                     "visibleIf": "{source_options} == 'Broker Referral'"
                 },
                 {
@@ -360,6 +361,7 @@
                     "type": "text",
                     "name": "broker_number",
                     "title": "Broker Phone Number (optional)",
+                    "startWithNewLine": false,
                     "visibleIf": "{source_options} == 'Broker Referral'"
                 }
                     ]
