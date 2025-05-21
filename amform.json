@@ -305,7 +305,61 @@
                             "visibleIf": "{is_foreign_national} = 'No' and {entity_type} != 'TBD'"
                         }
                     ]
-                }
+                },
+                   {
+                    "type": "html",
+                    "name": "source_header",
+                    "html": "<h3>Source</h3><hr/>"
+                },
+                 {
+                            "type": "dropdown",
+                            "name": "source_options",
+                            "title": "Source of borrower",
+                            "choices": [
+                                "Email/Newsletter",
+                                "Direct Mail/Postcard",
+                                "RE Social Club",
+                                "Radio",
+                                "Video Ad",
+                                "Internet Search",
+                                "YouTube",
+                                "Blog/Article",
+                                "Event/Seminar",
+                                "Webinar",
+                                "Facebook",
+                                "Twitter",
+                                "Instagram",
+                                "LinkedIn",
+                                "Family/Friend",
+                                "PrivateLenderLink",
+                                "HardMoneyOffers",
+                                "BiggerPockers",
+                                "Client Referral",
+                                "Investor Referral",
+                                "Existing Client",
+                                "Broker Referral"
+                            ],
+                            "startWithNewLine": false,
+                        },
+                  {
+                            "type": "text",
+                            "name": "broker_name",
+                            "title": "Broker Name",
+                            "visibleIf": "{source_options} == 'Broker Referral'"
+                        },
+                    {
+                            "type": "text",
+                            "name": "broker_email",
+                            "title": "Broker Email",
+                            "visibleIf": "{source_options} == 'Broker Referral'"
+                        },
+                    {
+                            "type": "text",
+                            "name": "broker_number",
+                            "title": "Broker Phone Number (optional)",
+                            "visibleIf": "{source_options} == 'Broker Referral'"
+                        },
+                
             ]
         }
     ]
