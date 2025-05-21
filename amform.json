@@ -116,7 +116,7 @@
                     "type": "html",
                     "name": "deal_details_header",
                     "visibleIf": "{transaction_type} notempty",
-                    "html": "<h3>Deal Details</h3><hr/>"
+                    "html": "<hr/><h3>Deal Details</h3>"
                 },
                 {
                     "type": "panel",
@@ -181,7 +181,7 @@
                     "type": "html",
                     "name": "subject_address_header",
                     "visibleIf": "{property_under_contract} notempty",
-                    "html": "<h3>Subject Address</h3><hr/>"
+                    "html": "<hr/><h3>Subject Address</h3>"
                 },
                 {
                     "type": "panel",
@@ -218,7 +218,7 @@
                 {
                     "type": "html",
                     "name": "borrower_info_header",
-                    "html": "<h3>Borrower Info</h3><hr/>"
+                    "html": "<hr/><h3>Borrower Info</h3>"
                 },
                 {
                     "type": "panel",
@@ -309,63 +309,192 @@
                 {
                     "type": "html",
                     "name": "source_header",
-                    "html": "<h3>Source</h3><hr/>"
+                    "html": "<hr/><h3>Source</h3>"
                 },
-                    {
+                {
                     "type": "panel",
                     "name": "source_panel",
                     "elements": [
-                {
-                    "type": "dropdown",
-                    "name": "source_options",
-                    "title": "Source of borrower",
-                    "choices": [
-                        "Email/Newsletter",
-                        "Direct Mail/Postcard",
-                        "RE Social Club",
-                        "Radio",
-                        "Video Ad",
-                        "Internet Search",
-                        "YouTube",
-                        "Blog/Article",
-                        "Event/Seminar",
-                        "Webinar",
-                        "Facebook",
-                        "Twitter",
-                        "Instagram",
-                        "LinkedIn",
-                        "Family/Friend",
-                        "PrivateLenderLink",
-                        "HardMoneyOffers",
-                        "BiggerPockers",
-                        "Client Referral",
-                        "Investor Referral",
-                        "Existing Client",
-                        "Broker Referral"
+                        {
+                            "type": "dropdown",
+                            "name": "source_options",
+                            "title": "Source of borrower",
+                            "choices": [
+                                "Email/Newsletter",
+                                "Direct Mail/Postcard",
+                                "RE Social Club",
+                                "Radio",
+                                "Video Ad",
+                                "Internet Search",
+                                "YouTube",
+                                "Blog/Article",
+                                "Event/Seminar",
+                                "Webinar",
+                                "Facebook",
+                                "Twitter",
+                                "Instagram",
+                                "LinkedIn",
+                                "Family/Friend",
+                                "PrivateLenderLink",
+                                "HardMoneyOffers",
+                                "BiggerPockers",
+                                "Client Referral",
+                                "Investor Referral",
+                                "Existing Client",
+                                "Broker Referral"
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "name": "broker_name",
+                            "title": "Broker Name",
+                            "startWithNewLine": false,
+                            "visibleIf": "{source_options} == 'Broker Referral'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "broker_email",
+                            "title": "Broker Email",
+                            "visibleIf": "{source_options} == 'Broker Referral'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "broker_number",
+                            "title": "Broker Phone Number (optional)",
+                            "startWithNewLine": false,
+                            "visibleIf": "{source_options} == 'Broker Referral'"
+                        }
                     ]
                 },
                 {
-                    "type": "text",
-                    "name": "broker_name",
-                    "title": "Broker Name",
-                    "startWithNewLine": false,
-                    "visibleIf": "{source_options} == 'Broker Referral'"
+                    "type": "html",
+                    "name": "proposal_header",
+                    "html": "<hr/><h3>Proposal</h3>"
                 },
                 {
-                    "type": "text",
-                    "name": "broker_email",
-                    "title": "Broker Email",
-                    "visibleIf": "{source_options} == 'Broker Referral'"
-                },
-                {
-                    "type": "text",
-                    "name": "broker_number",
-                    "title": "Broker Phone Number (optional)",
-                    "startWithNewLine": false,
-                    "visibleIf": "{source_options} == 'Broker Referral'"
+                    "type": "panel",
+                    "name": "proposal_panel",
+                    "elements": [
+                        {
+                            "type": "dropdown",
+                            "name": "prepare_proposal",
+                            "title": "Would you like to prepare the Proposal?",
+                            "choices": [
+                                "Yes",
+                                "No"
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "name": "confirmed_address",
+                            "title": "Address (Confirmed) (optional)",
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "borrower_full_legal_name",
+                            "title": "Borrower's Full Legal Name (optional)",
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "confirmed_loan_amount",
+                            "title": "Loan Amount (Confirmed) (optional)",
+                            "inputType": "number",
+                            "prefix": "$",
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "confirmed_loan_term",
+                            "title": "Loan Term (Confirmed) (optional)",
+                            "inputType": "number",
+                            "suffix": "Months",
+                            "startWithNewLine": false,
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "dropdown",
+                            "name": "loan_purpose",
+                            "title": "Loan Purpose (optional)",
+                            "choices": [
+                                "Add options here"
+                            ],
+                            "startWithNewLine": false,
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "interest_rate",
+                            "title": "Interest Rate (optional)",
+                            "inputType": "number",
+                            "suffix": "%",
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "dropdown",
+                            "name": "collateral",
+                            "title": "Collateral (optional)",
+                            "choices": [
+                                "Add options here"
+                            ],
+                            "startWithNewLine": false,
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "rehab_hold_fee",
+                            "title": "Rehab Hold Fee (optional)",
+                            "inputType": "number",
+                            "prefix": "$",
+                            "startWithNewLine": false,
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "payment_reserves",
+                            "title": "Payment Reserves (optional)",
+                            "inputType": "number",
+                            "suffix": "Months",
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "loan_origination_fee",
+                            "title": "Loan Origination Fee (optional)",
+                            "inputType": "number",
+                            "suffix": "%",
+                            "startWithNewLine": false,
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "admin_fee",
+                            "title": "Administrative Fee (optional)",
+                            "inputType": "number",
+                            "prefix": "$",
+                            "startWithNewLine": false,
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "mor_verified_as_is",
+                            "title": "MOR Verified As-Is Value (optional)",
+                            "inputType": "number",
+                            "prefix": "$",
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        },
+                        {
+                            "type": "text",
+                            "name": "mor_verified_arv",
+                            "title": "MOR Verified ARV (optional)",
+                            "inputType": "number",
+                            "prefix": "$",
+                            "startWithNewLine": false,
+                            "visibleIf": "{prepare_proposal} = 'Yes'"
+                        }
+                    ]
                 }
-                    ]
-                    }
             ]
         }
     ]
