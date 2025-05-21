@@ -311,6 +311,10 @@
                     "name": "source_header",
                     "html": "<h3>Source</h3><hr/>"
                 },
+                    {
+                    "type": "panel",
+                    "name": "source_panel",
+                    "elements": [
                 {
                     "type": "dropdown",
                     "name": "source_options",
@@ -358,6 +362,8 @@
                     "title": "Broker Phone Number (optional)",
                     "visibleIf": "{source_options} == 'Broker Referral'"
                 }
+                    ]
+                    }
             ]
         }
     ]
