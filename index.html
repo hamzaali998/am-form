@@ -1,50 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Account Manager Form</title>
+  <title>Survey Form</title>
 
-  <!-- SurveyJS CSS + JS -->
-  <link href="https://unpkg.com/survey-core@latest/modern.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/survey-core@1.9.101/defaultV2.min.css" rel="stylesheet" />
+
   <script src="https://unpkg.com/jquery"></script>
-  <script src="https://unpkg.com/survey-jquery@latest/survey.jquery.min.js"></script>
 
-  <!-- Custom layout -->
+  <script src="https://unpkg.com/survey-jquery@1.9.101/survey.jquery.min.js"></script>
+
   <style>
     .sd-root-modern .sv_row {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
     }
-
     .sd-root-modern .sv_qstn {
       flex: 1 1 45%;
       min-width: 300px;
     }
-
-    .sv_q_title {
-      font-weight: bold;
-    }
-
     h3 {
       margin-top: 30px;
       margin-bottom: 10px;
     }
-
     hr {
       margin: 20px 0;
     }
   </style>
 </head>
 <body>
+  <!-- Survey container -->
   <div id="surveyContainer"></div>
 
   <script>
-    const GITHUB_JSON_URL = "https://raw.githubusercontent.com/hamzaali998/am-form/refs/heads/main/amform.json";
+    const GITHUB_JSON_URL = "https://raw.githubusercontent.com/hamzaali998/am-form/main/amform.json";
 
-    Survey.StylesManager.applyTheme("modern");
+    Survey.StylesManager.applyTheme("defaultV2");
 
     fetch(GITHUB_JSON_URL)
       .then(res => res.json())
@@ -60,9 +52,7 @@
 
           fetch("https://h.albato.com/wh/38/1lfn9r8/rcpnt76nkGOOjpAL2frbazJAMn_eJfuWTo179pi9AjE/", {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
           });
         });
