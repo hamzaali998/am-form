@@ -51,18 +51,35 @@
         const survey = new Survey.Model(surveyJson);
         survey.clearInvisibleValues = "none";
         survey.mergeInvisibleValues = "always";
+    survey.onComplete.add(function(sender) {
+      const formData = sender.data;
+    
+      // Inject deal_id
+      if (dealId) {
+        formData.deal_id = dealId;
+      } else {
+        alert("Missing deal_id in URL. Submission will be blocked.");
+        return;
+      }
+    
+      console.log("🚀 Final submission payload:", formData);
+    
+      fetch("https://mor-worker.mordev.workers.dev/am-forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("✅ Form submitted successfully!");
+        console.log("🎉 Response:", data);
+      })
+      .catch(err => {
+        alert("❌ Submission failed.");
+        console.error(err);
+      });
+    });
 
-        survey.onComplete.add(function(sender) {
-          const formData = sender.data;
-          alert("Form submitted:\n" + JSON.stringify(formData, null, 2));
-          console.log("Submitted data:", formData);
-
-          fetch("https://h.albato.com/wh/38/1lfn9r8/rcpnt76nkGOOjpAL2frbazJAMn_eJfuWTo179pi9AjE/", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
-          });
-        });
 
         $("#surveyContainer").Survey({ model: survey });
       })
