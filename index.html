@@ -34,6 +34,13 @@
   <div id="surveyContainer"></div>
 
   <script>
+      function getQueryParam(key) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(key);
+  }
+
+    const dealId = getQueryParam("deal_id");
+    
     const GITHUB_JSON_URL = "https://raw.githubusercontent.com/hamzaali998/am-form/main/amform.json";
 
     Survey.StylesManager.applyTheme("defaultV2");
@@ -63,6 +70,8 @@
         alert("Failed to load form from GitHub.");
         console.error(err);
       });
+
+    
   </script>
 </body>
 </html>
