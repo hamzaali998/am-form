@@ -68,7 +68,7 @@
                             "name": "loan_amount",
                             "title": "Loan Amount",
                             "inputType": "number",
-                            "isRequired": true,
+                            "isRequired": true
                         },
                         {
                             "type": "text",
@@ -76,7 +76,7 @@
                             "title": "Loan Term (Months)",
                             "inputType": "number",
                             "startWithNewLine": false,
-                            "isRequired": true,
+                            "isRequired": true
                         },
                         {
                             "type": "dropdown",
