@@ -47,7 +47,8 @@
                             "choices": [
                                 "Purchase",
                                 "Refinance"
-                            ]
+                            ],
+                            "isRequired": true
                         },
                         {
                             "type": "dropdown",
@@ -59,20 +60,23 @@
                                 "Rehab-N-Hold",
                                 "Extension"
                             ],
-                            "startWithNewLine": false
+                            "startWithNewLine": false,
+                            "isRequired": true
                         },
                         {
                             "type": "text",
                             "name": "loan_amount",
                             "title": "Loan Amount",
-                            "inputType": "number"
+                            "inputType": "number",
+                            "isRequired": true,
                         },
                         {
                             "type": "text",
                             "name": "loan_term",
                             "title": "Loan Term (Months)",
                             "inputType": "number",
-                            "startWithNewLine": false
+                            "startWithNewLine": false,
+                            "isRequired": true,
                         },
                         {
                             "type": "dropdown",
@@ -81,7 +85,8 @@
                             "choices": [
                                 "Residential",
                                 "Commercial"
-                            ]
+                            ],
+                            "isRequired": true
                         },
                         {
                             "type": "dropdown",
@@ -96,7 +101,8 @@
                                 "Single-Family Residence with ADU",
                                 "Manufactured Single-Family Residence"
                             ],
-                            "startWithNewLine": false
+                            "startWithNewLine": false,
+                            "isRequired": true
                         },
                         {
                             "type": "radiogroup",
