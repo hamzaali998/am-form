@@ -28,48 +28,51 @@
   </style>
 </head>
 <body>
-  <!-- Survey container -->
   <div id="surveyContainer"></div>
 
-  <script>
-    const GITHUB_JSON_URL = "https://raw.githubusercontent.com/hamzaali998/am-form/main/amform.json";
+ <script>
+  const GITHUB_JSON_URL = "https://raw.githubusercontent.com/hamzaali998/am-form/main/amform.json";
 
-    Survey.StylesManager.applyTheme("defaultV2");
+  Survey.StylesManager.applyTheme("defaultV2");
 
-    fetch(GITHUB_JSON_URL)
-      .then(res => res.json())
-      .then(surveyJson => {
-        const survey = new Survey.Model(surveyJson);
-        survey.clearInvisibleValues = "none";
-        survey.mergeInvisibleValues = "always";
+  fetch(GITHUB_JSON_URL)
+    .then(res => res.json())
+    .then(surveyJson => {
+      const survey = new Survey.Model(surveyJson);
+      survey.clearInvisibleValues = "none";
+      survey.mergeInvisibleValues = "always";
 
-        survey.onComplete.add(function(sender) {
-          const formData = sender.data;
+      survey.onComplete.add(function(sender) {
+        const formData = sender.data;
+        formData.deal_id = "1431"; // Static for now
 
-          console.log("🚀 Final submission payload:", formData);
+        console.log("🚀 Final submission payload:", formData);
 
-          fetch("https://h.albato.com/wh/38/1lfn9r8/QtrDFrva0sAD4ARosx1esI76kHWkrFIWx4t7N0Oj_RM/", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
-          })
-          .then(res => res.json())
-          .then(data => {
-            alert("✅ Form submitted successfully!");
-            console.log("🎉 Response:", data);
-          })
-          .catch(err => {
-            alert("❌ Submission failed.");
-            console.error(err);
-          });
+        fetch("/am-submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(res => res.json())
+        .then(data => {
+          alert("✅ Form submitted successfully!");
+          console.log("🎉 Response:", data);
+        })
+        .catch(err => {
+          alert("❌ Submission failed.");
+          console.error(err);
         });
-
-        $("#surveyContainer").Survey({ model: survey });
-      })
-      .catch(err => {
-        alert("Failed to load form from GitHub.");
-        console.error(err);
       });
-  </script>
+
+      $("#surveyContainer").Survey({ model: survey });
+    })
+    .catch(err => {
+      alert("Failed to load form from GitHub.");
+      console.error(err);
+    });
+</script>
+
 </body>
 </html>
