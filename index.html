@@ -5,9 +5,7 @@
   <title>Survey Form</title>
 
   <link href="https://unpkg.com/survey-core@1.9.101/defaultV2.min.css" rel="stylesheet" />
-
   <script src="https://unpkg.com/jquery"></script>
-
   <script src="https://unpkg.com/survey-jquery@1.9.101/survey.jquery.min.js"></script>
 
   <style>
@@ -34,13 +32,12 @@
   <div id="surveyContainer"></div>
 
   <script>
-      function getQueryParam(key) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(key);
-  }
+    function getQueryParam(key) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(key);
+    }
 
     const dealId = getQueryParam("deal_id");
-    
     const GITHUB_JSON_URL = "https://raw.githubusercontent.com/hamzaali998/am-form/main/amform.json";
 
     Survey.StylesManager.applyTheme("defaultV2");
@@ -51,36 +48,35 @@
         const survey = new Survey.Model(surveyJson);
         survey.clearInvisibleValues = "none";
         survey.mergeInvisibleValues = "always";
-    survey.onComplete.add(function(sender) {
-      const formData = sender.data;
-    
-      // Inject deal_id
-      if (dealId) {
-        formData.deal_id = dealId;
-      } else {
-        alert("Missing deal_id in URL. Submission will be blocked.");
-        return;
-      }
-    
-      console.log("🚀 Final submission payload:", formData);
-      const AUTH_TOKEN = "Bearer xyz";
-    
-      fetch("https://mor-worker.mordev.workers.dev/am-forms", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Authorization": AUTH_TOKEN },
-        body: JSON.stringify(formData)
-      })
-      .then(res => res.json())
-      .then(data => {
-        alert("✅ Form submitted successfully!");
-        console.log("🎉 Response:", data);
-      })
-      .catch(err => {
-        alert("❌ Submission failed.");
-        console.error(err);
-      });
-    });
 
+        survey.onComplete.add(function(sender) {
+          const formData = sender.data;
+
+          // Inject deal_id
+          if (dealId) {
+            formData.deal_id = dealId;
+          } else {
+            alert("Missing deal_id in URL. Submission will be blocked.");
+            return;
+          }
+
+          console.log("🚀 Final submission payload:", formData);
+
+          fetch("https://h.albato.com/wh/38/1lfn9r8/QtrDFrva0sAD4ARosx1esI76kHWkrFIWx4t7N0Oj_RM/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+          })
+          .then(res => res.json())
+          .then(data => {
+            alert("✅ Form submitted successfully!");
+            console.log("🎉 Response:", data);
+          })
+          .catch(err => {
+            alert("❌ Submission failed.");
+            console.error(err);
+          });
+        });
 
         $("#surveyContainer").Survey({ model: survey });
       })
@@ -88,8 +84,6 @@
         alert("Failed to load form from GitHub.");
         console.error(err);
       });
-
-    
   </script>
 </body>
 </html>
