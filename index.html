@@ -32,12 +32,6 @@
   <div id="surveyContainer"></div>
 
   <script>
-    function getQueryParam(key) {
-      const params = new URLSearchParams(window.location.search);
-      return params.get(key);
-    }
-
-    const dealId = getQueryParam("deal_id");
     const GITHUB_JSON_URL = "https://raw.githubusercontent.com/hamzaali998/am-form/main/amform.json";
 
     Survey.StylesManager.applyTheme("defaultV2");
@@ -51,14 +45,6 @@
 
         survey.onComplete.add(function(sender) {
           const formData = sender.data;
-
-          // Inject deal_id
-          if (dealId) {
-            formData.deal_id = dealId;
-          } else {
-            alert("Missing deal_id in URL. Submission will be blocked.");
-            return;
-          }
 
           console.log("🚀 Final submission payload:", formData);
 
