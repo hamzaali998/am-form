@@ -12,7 +12,7 @@
                 },
                 {
                     "type": "dropdown",
-                    "name": "account_manager_name",
+                    "name": "account_manager",
                     "title": "Name (optional)",
                     "choices": [
                         "Sean Morsi",
