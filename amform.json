@@ -134,10 +134,7 @@
                           ],
                           "startWithNewLine": false,
                           "isRequired": true
-                        }
-
-
-
+                        },
                         {
                             "type": "radiogroup",
                             "name": "important_deal_aspect",
