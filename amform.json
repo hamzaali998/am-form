@@ -106,48 +106,36 @@
                             "startWithNewLine": false,
                             "isRequired": true
                         },
-                       {
-                      "type": "dropdown",
-                      "name": "property_type",
-                      "title": "Property Type",
-                      "choices": ["Residential", "Commercial"],
-                      "isRequired": true
-                    },
                     {
-                      "type": "dropdown",
-                      "name": "property_subtype_res",
-                      "valueName": "property_subtype",
-                      "title": "Property Sub-Type",
-                      "visibleIf": "{property_type} = 'Residential'",
-                      "choices": [
-                        "Single-Family Residence",
-                        "Condo",
-                        "Townhouse",
-                        "2-4 Units",
-                        "Land",
-                        "Single-Family Residence with ADU",
-                        "Manufactured Single-Family Residence"
-                      ],
-                      "startWithNewLine": false,
-                      "isRequired": true
-                    },
-                    {
-                      "type": "dropdown",
-                      "name": "property_subtype_com",
-                      "valueName": "property_subtype",
-                      "title": "Property Sub-Type",
-                      "visibleIf": "{property_type} = 'Commercial'",
-                      "choices": [
-                        "Office",
-                        "Retail",
-                        "Industrial",
-                        "Multi-Family",
-                        "Land",
-                        "Special Purpose"
-                      ],
-                      "startWithNewLine": false,
-                      "isRequired": true
-                    },
+                          "type": "dropdown",
+                          "name": "property_type",
+                          "title": "Property Type",
+                          "choices": ["Residential", "Commercial"],
+                          "isRequired": true
+                        },
+                        {
+                          "type": "dropdown",
+                          "name": "property_subtype",
+                          "title": "Property Sub-Type",
+                          "choices": [
+                            { "value": "Single-Family Residence", "visibleIf": "{property_type} = 'Residential'" },
+                            { "value": "Condo", "visibleIf": "{property_type} = 'Residential'" },
+                            { "value": "Townhouse", "visibleIf": "{property_type} = 'Residential'" },
+                            { "value": "2-4 Units", "visibleIf": "{property_type} = 'Residential'" },
+                            { "value": "Land", "visibleIf": "true" },
+                            { "value": "Single-Family Residence with ADU", "visibleIf": "{property_type} = 'Residential'" },
+                            { "value": "Manufactured Single-Family Residence", "visibleIf": "{property_type} = 'Residential'" },
+                        
+                            { "value": "Office", "visibleIf": "{property_type} = 'Commercial'" },
+                            { "value": "Retail", "visibleIf": "{property_type} = 'Commercial'" },
+                            { "value": "Industrial", "visibleIf": "{property_type} = 'Commercial'" },
+                            { "value": "Multi-Family", "visibleIf": "{property_type} = 'Commercial'" },
+                            { "value": "Special Purpose", "visibleIf": "{property_type} = 'Commercial'" }
+                          ],
+                          "startWithNewLine": false,
+                          "isRequired": true
+                        }
+
 
 
                         {
