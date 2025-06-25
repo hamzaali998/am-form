@@ -17,13 +17,41 @@
                     "choices": [
                         "Sean Morsi",
                         "Antony Tobar",
-                        "Sam Gandhi",
                         "Peter Irsilious",
                         "Micheal Rahavi",
-                        "Sofia Campo",
+                        "Sachin Gandhi",
+                    ]
+                },
+                  {
+                    "type": "html",
+                    "name": "account_executive_header",
+                    "html": "<h3>Account Executive</h3>"
+                },
+                {
+                    "type": "dropdown",
+                    "name": "account_executive",
+                    "title": "Name (optional)",
+                    "choices": [
+                        "Sean Morsi",
+                        "Antony Tobar",
+                        "Peter Irsilious",
                         "Elias Halak",
-                        "Benjamin Long",
-                        "Danny Cifuentes"
+                    ]
+                },
+                  {
+                    "type": "html",
+                    "name": "risk_management_header",
+                    "html": "<h3>Risk Management</h3>"
+                },
+                {
+                    "type": "dropdown",
+                    "name": "risk_management",
+                    "title": "Name (optional)",
+                    "choices": [
+                        "Sean Morsi",
+                        "Antony Tobar",
+                        "Peter Irsilious",
+                        "Elias Halak"
                     ]
                 },
                 {
@@ -78,32 +106,36 @@
                             "startWithNewLine": false,
                             "isRequired": true
                         },
-                        {
-                            "type": "dropdown",
-                            "name": "property_type",
-                            "title": "Property Type",
-                            "choices": [
-                                "Residential",
-                                "Commercial"
-                            ],
-                            "isRequired": true
-                        },
-                        {
-                            "type": "dropdown",
-                            "name": "property_subtype",
-                            "title": "Property Sub-Type",
-                            "choices": [
-                                "Single-Family Residence",
-                                "Condo",
-                                "Townhouse",
-                                "2-4 Units",
-                                "Land",
-                                "Single-Family Residence with ADU",
-                                "Manufactured Single-Family Residence"
-                            ],
-                            "startWithNewLine": false,
-                            "isRequired": true
-                        },
+                       {
+                      "type": "dropdown",
+                      "name": "property_type",
+                      "title": "Property Type",
+                      "choices": ["Residential", "Commercial"],
+                      "isRequired": true
+                    },
+                    {
+                      "type": "dropdown",
+                      "name": "property_subtype",
+                      "title": "Property Sub-Type",
+                      "choices": [
+                        { "value": "Single-Family Residence", "visibleIf": "{property_type} = 'Residential'" },
+                        { "value": "Condo", "visibleIf": "{property_type} = 'Residential'" },
+                        { "value": "Townhouse", "visibleIf": "{property_type} = 'Residential'" },
+                        { "value": "2-4 Units", "visibleIf": "{property_type} = 'Residential'" },
+                        { "value": "Land", "visibleIf": "true" },
+                        { "value": "Single-Family Residence with ADU", "visibleIf": "{property_type} = 'Residential'" },
+                        { "value": "Manufactured Single-Family Residence", "visibleIf": "{property_type} = 'Residential'" },
+                    
+                        { "value": "Office", "visibleIf": "{property_type} = 'Commercial'" },
+                        { "value": "Retail", "visibleIf": "{property_type} = 'Commercial'" },
+                        { "value": "Industrial", "visibleIf": "{property_type} = 'Commercial'" },
+                        { "value": "Multi-Family", "visibleIf": "{property_type} = 'Commercial'" },
+                        { "value": "Special Purpose", "visibleIf": "{property_type} = 'Commercial'" }
+                      ],
+                      "startWithNewLine": false,
+                      "isRequired": true
+                    },
+
                         {
                             "type": "radiogroup",
                             "name": "important_deal_aspect",
